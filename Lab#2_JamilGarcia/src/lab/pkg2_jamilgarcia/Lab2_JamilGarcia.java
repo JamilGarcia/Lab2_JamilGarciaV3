@@ -175,6 +175,10 @@ public class Lab2_JamilGarcia {
                     System.out.println("Escriba una descripcion: ");
                     Descripcion = jg.nextLine();
                     Descripcion = jg.nextLine();
+                    
+                    System.out.println();
+                    System.out.println("Escriba la edad del personaje: ");
+                    Años = jg.nextInt();
 
                     System.out.println("Elige una nacionalidad: ");
                     System.out.println("1. Norfair");
@@ -297,6 +301,10 @@ public class Lab2_JamilGarcia {
                     System.out.println("Escriba una descripcion: ");
                     Descripcion = jg.nextLine();
                     Descripcion = jg.nextLine();
+                    
+                    System.out.println();
+                    System.out.println("Escriba la edad del personaje: ");
+                    Años = jg.nextInt();
 
                     System.out.println("Elige una nacionalidad: ");
                     System.out.println("1. Norfair");
@@ -340,7 +348,10 @@ public class Lab2_JamilGarcia {
                     
                     break;
                 case 3:
-
+                    for (int j = 0; j < per.size(); j++) {
+                        System.out.println();
+                        System.out.println(j+1 + ".- " + per.get(j));
+                    }
                     break;
                 case 4:
 

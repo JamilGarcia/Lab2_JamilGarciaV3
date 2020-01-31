@@ -132,7 +132,7 @@ public class Personajes {
 
     @Override
     public String toString() {
-        return "Personajes{" + "tipo=" + tipo + ", nombre=" + nombre + ", raza=" + raza + ", estatura=" + estatura + ", peso=" + peso + ", a\u00f1os=" + años + ", descripcion=" + descripcion + ", nacion=" + nacion + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG + '}';
+        return "Personajes:" + "\n" + "Tipo: " + tipo + "\n" + "Nombre: " + nombre + "\n" +"Raza: " + raza + "\n" +"Estatura: " + estatura + "\n" + "Peso: " + peso + "\n" + "A\u00f1os: " + años + "\n" + "Descripcion: " + descripcion + "\n" + "Nacion: " + nacion + "\n" + "HP: " + HP + "\n" + "CS: " + CS + "\n" + "AC: " + AC + "\n";
     }
     
     
