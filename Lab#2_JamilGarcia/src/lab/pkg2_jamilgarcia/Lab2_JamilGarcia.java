@@ -207,7 +207,137 @@ public class Lab2_JamilGarcia {
                     per.add(new Personajes(Tipo, Nombre, Raza, Estatura, Peso, Años, Descripcion, Nacion, HP, CS, AC));
                     break;
                 case 2:
+                    Tipo = " ";
+                    Nombre = " ";
+                    Raza = " ";
+                    Estatura = 0.00;
+                    Peso = 0.00;
+                    Años = 0;
+                    Descripcion = " ";
+                    Nacion = " ";
+                    HP = 0;
+                    CS = 0;
+                    AC = 0;
+                    System.out.println("Ingrese el numero de personaje que quiere editar: ");
+                    int i = jg.nextInt();
+                    System.out.println("Elige un tipo de personaje: ");
+                    System.out.println("1. Clerigo");
+                    System.out.println("2. Barbaro");
+                    System.out.println("3. Mago");
+                    System.out.println("4. Picaro");
+                    tip = jg.nextInt();
 
+                    switch (tip) {
+                        case 1:
+                            Tipo = "Clerigo";
+                            CS = 97;
+                            AC = 40;
+                            break;
+                        case 2:
+                            Tipo = "Barbaro";
+                            CS = 93;
+                            AC = 65;
+                            break;
+                        case 3:
+                            Tipo = "Mago";
+                            CS = 101;
+                            AC = 20;
+                            break;
+                        case 4:
+                            Tipo = "Picaro";
+                            CS = 80;
+                            AC = 50;
+                            break;
+                        default:
+                            System.out.println("Entrada erronea");
+                            break;
+                    }
+                    System.out.println();
+                    System.out.println("Nombre del personaje: ");
+                    Nombre = jg.nextLine();
+                    Nombre = jg.nextLine();
+
+                    System.out.println("Elige una raza: ");
+                    System.out.println("1. Mediano");
+                    System.out.println("2. Enano");
+                    System.out.println("3. Elfo");
+                    System.out.println("4. Humano");
+                    raz = jg.nextInt();
+
+                    switch (raz) {
+                        case 1:
+                            Raza = "Mediano";
+                            HP = 50 + r.nextInt(60);
+                            break;
+                        case 2:
+                            Raza = "Enano";
+                            HP = 80 + r.nextInt(100);
+                            break;
+                        case 3:
+                            Raza = "Elfo";
+                            HP = 50 + r.nextInt(70);
+                            break;
+                        case 4:
+                            Raza = "Humano";
+                            HP = 40 + r.nextInt(75);
+                            break;
+                        default:
+                            System.out.println("Entrada erronea");
+                            break;
+                    }
+                    System.out.println();
+                    System.out.println("Ingrese la estatura: ");
+                    Estatura = jg.nextDouble();
+
+                    System.out.println();
+                    System.out.println("Ingrese el peso: ");
+                    Peso = jg.nextDouble();
+
+                    System.out.println();
+                    System.out.println("Escriba una descripcion: ");
+                    Descripcion = jg.nextLine();
+                    Descripcion = jg.nextLine();
+
+                    System.out.println("Elige una nacionalidad: ");
+                    System.out.println("1. Norfair");
+                    System.out.println("2. Brinstar");
+                    System.out.println("3. Maridia");
+                    System.out.println("4. Zebes");
+                    System.out.println("5. Crateria");
+                    System.out.println();
+                    Nacionalidad = jg.nextInt();
+                    switch (Nacionalidad) {
+                        case 1:
+                            Nacion = "Norfair";
+                            break;
+                        case 2:
+                            Nacion = "Brinstar";
+                            break;
+                        case 3:
+                            Nacion = "Maridia";
+                            break;
+                        case 4:
+                            Nacion = "Zebes";
+                            break;
+                        case 5:
+                            Nacion = "Crateria";
+                            break;
+                        default:
+                            System.out.println("Entrada incorrecta");
+                            break;
+                    }
+                   ((Personajes) per.get(i)).setAC(AC);
+                   ((Personajes) per.get(i)).setAños(Años);
+                   ((Personajes) per.get(i)).setCS(CS);
+                   ((Personajes) per.get(i)).setDescripcion(Descripcion);
+                   ((Personajes) per.get(i)).setEstatura(Estatura);
+                   ((Personajes) per.get(i)).setHP(HP);
+                   ((Personajes) per.get(i)).setNacion(Nacion);
+                   ((Personajes) per.get(i)).setNombre(Nombre);
+                   ((Personajes) per.get(i)).setPeso(Peso);
+                   ((Personajes) per.get(i)).setRaza(Raza);
+                   ((Personajes) per.get(i)).setTipo(Tipo);
+                    
                     break;
                 case 3:
 
