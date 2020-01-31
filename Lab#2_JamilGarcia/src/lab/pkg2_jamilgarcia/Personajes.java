@@ -20,7 +20,7 @@ public class Personajes {
         
     }
 
-    public Personajes(String tipo, String nombre, String raza, double estatura, double peso, int años, String descripcion, String nacion, int HP, int CS, int AC, int DG) {
+    public Personajes(String tipo, String nombre, String raza, double estatura, double peso, int años, String descripcion, String nacion, int HP, int CS, int AC) {
         this.tipo = tipo;
         this.nombre = nombre;
         this.raza = raza;
@@ -32,7 +32,6 @@ public class Personajes {
         this.HP = HP;
         this.CS = CS;
         this.AC = AC;
-        this.DG = DG;
     }
 
     public String getTipo() {
