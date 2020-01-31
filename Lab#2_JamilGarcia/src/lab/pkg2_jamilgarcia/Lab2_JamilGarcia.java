@@ -8,12 +8,12 @@ public class Lab2_JamilGarcia {
 
     static Scanner jg = new Scanner(System.in);
     static Random r = new Random();
+    static ArrayList per = new ArrayList();
 
     public static void main(String[] args) {
         //Preparacion de variables
-        ArrayList per = new ArrayList();
-        //Generacion de los personajes predefinidos
 
+        //Generacion de los personajes predefinidos
         //Personaje 1
         per.add(new Personajes());
         ((Personajes) per.get(0)).setTipo("Clerigo");
@@ -175,7 +175,7 @@ public class Lab2_JamilGarcia {
                     System.out.println("Escriba una descripcion: ");
                     Descripcion = jg.nextLine();
                     Descripcion = jg.nextLine();
-                    
+
                     System.out.println();
                     System.out.println("Escriba la edad del personaje: ");
                     Años = jg.nextInt();
@@ -301,7 +301,7 @@ public class Lab2_JamilGarcia {
                     System.out.println("Escriba una descripcion: ");
                     Descripcion = jg.nextLine();
                     Descripcion = jg.nextLine();
-                    
+
                     System.out.println();
                     System.out.println("Escriba la edad del personaje: ");
                     Años = jg.nextInt();
@@ -334,30 +334,119 @@ public class Lab2_JamilGarcia {
                             System.out.println("Entrada incorrecta");
                             break;
                     }
-                   ((Personajes) per.get(i)).setAC(AC);
-                   ((Personajes) per.get(i)).setAños(Años);
-                   ((Personajes) per.get(i)).setCS(CS);
-                   ((Personajes) per.get(i)).setDescripcion(Descripcion);
-                   ((Personajes) per.get(i)).setEstatura(Estatura);
-                   ((Personajes) per.get(i)).setHP(HP);
-                   ((Personajes) per.get(i)).setNacion(Nacion);
-                   ((Personajes) per.get(i)).setNombre(Nombre);
-                   ((Personajes) per.get(i)).setPeso(Peso);
-                   ((Personajes) per.get(i)).setRaza(Raza);
-                   ((Personajes) per.get(i)).setTipo(Tipo);
-                    
+                    ((Personajes) per.get(i)).setAC(AC);
+                    ((Personajes) per.get(i)).setAños(Años);
+                    ((Personajes) per.get(i)).setCS(CS);
+                    ((Personajes) per.get(i)).setDescripcion(Descripcion);
+                    ((Personajes) per.get(i)).setEstatura(Estatura);
+                    ((Personajes) per.get(i)).setHP(HP);
+                    ((Personajes) per.get(i)).setNacion(Nacion);
+                    ((Personajes) per.get(i)).setNombre(Nombre);
+                    ((Personajes) per.get(i)).setPeso(Peso);
+                    ((Personajes) per.get(i)).setRaza(Raza);
+                    ((Personajes) per.get(i)).setTipo(Tipo);
+
                     break;
                 case 3:
                     for (int j = 0; j < per.size(); j++) {
                         System.out.println();
-                        System.out.println(j+1 + ".- " + per.get(j));
+                        System.out.println(j + 1 + ".- " + per.get(j));
                     }
                     break;
                 case 4:
-
+                    System.out.println("Elija el numero de personaje que desea borrar: ");
+                    int borrar = jg.nextInt();
+                    per.remove(borrar);
                     break;
                 case 5:
+                    int desc,
+                     desc2,
+                     ran,
+                     DG,
+                     hp,
+                     cs,
+                     ranC;
+                    boolean Combat = true;
+                    System.out.println("Ingrese el numero de personaje que desea usar: ");
+                    int person = jg.nextInt();
+                    int person2 = r.nextInt(per.size());
+                    while (Combat == true) {
+                        System.out.println("Elige:");
+                        System.out.println("1. Atacar");
+                        System.out.println("2. Defender");
+                        desc = jg.nextInt();
 
+                        switch (desc) {
+                            case 1:
+                                System.out.println("Atacando: ");
+                                ran = r.nextInt(100);
+                                if (ran > ((Personajes) per.get(person2)).getAC()) {
+                                    System.out.println("Acierto");
+                                    DG = 5 + r.nextInt(30);
+                                    hp = ((Personajes) per.get(person2)).getHP();
+                                    cs = ((Personajes) per.get(person2)).getCS();
+                                    if (cs < DG) {
+                                        System.out.println("Critico");
+                                        hp = hp - DG * 2;
+                                    } else {
+                                        hp = hp - DG;
+                                        ((Personajes) per.get(person2)).setHP(hp);
+                                    }
+                                    if (hp < 0) {
+                                        System.out.println("Haz ganado");
+                                        Combat = false;
+                                    }
+                                } else {
+                                    System.out.println("Fallo");
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Defendiendo: ");
+                                hp = ((Personajes) per.get(person)).getHP();
+                                hp = hp + 15;
+                                ((Personajes) per.get(person)).setHP(hp);
+                                break;
+                        }
+
+                        System.out.println(per.get(person));
+
+                        System.out.println("Turno de la compuatdora: ");
+                        desc2 = r.nextInt(3);
+                        switch (desc2) {
+                            case 1:
+                                System.out.println("Atacando: ");
+                                ran = r.nextInt(100);
+                                if (ran > ((Personajes) per.get(person)).getAC()) {
+                                    System.out.println("Acierto");
+                                    DG = 5 + r.nextInt(30);
+                                    hp = ((Personajes) per.get(person)).getHP();
+                                    cs = ((Personajes) per.get(person)).getCS();
+                                    if (cs < DG) {
+                                        System.out.println("Critico");
+                                        hp = hp - DG * 2;
+                                    } else {
+                                        hp = hp - DG;
+                                        ((Personajes) per.get(person2)).setHP(hp);
+                                    }
+                                    if (hp < 0) {
+                                        System.out.println("Haz perdido");
+                                        Combat = false;
+                                    }
+                                } else {
+                                    System.out.println("Fallo");
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Defendiendo: ");
+                                hp = ((Personajes) per.get(person2)).getHP();
+                                hp = hp + 15;
+                                ((Personajes) per.get(person2)).setHP(hp);
+                                break;
+                        }
+
+                        System.out.println(per.get(person2));
+
+                    }
                     break;
                 case 0:
                     System.out.println("Gracias por usar el programa. ");
